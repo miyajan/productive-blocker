@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "productive-blocker",
+  "version": "0.1.0",
+  "description": "Chrome extension to block web sites for a specified time",
+  "icons": {
+    "48": "icons/block-48.png"
+  },
+  "options_page": "options.html",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/block-48.png"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["js/blocker.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "blocked.html",
+    "js/*.js"
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
