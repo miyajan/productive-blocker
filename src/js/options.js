@@ -16,9 +16,7 @@
 
     const load = () => {
         chrome.storage.sync.get(['enabled', 'blockSettings'], items => {
-            console.log(items);
             if (items['enabled'] !== undefined) {
-                console.log(items['enabled']);
                 getEnabledElement().checked = items['enabled'];
             }
             if (items['blockSettings'] !== undefined) {
